@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist! - Tudo que você assiste de forma organizada</title>
+    <link rel="shortcut icon" href="./img/logo-watchlist.png" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main-menu.css">
+    <link rel="stylesheet" href="./css/box.css">
+</head>
+<body>
+    
+    <!-- inicio menu -->
+    <header class="main-menu-box">
+        <ul class="main-menu-ul">
+            <li class="main-menu-item"><a href="index.html"><img src="./img/logotipo-watchlist-horizontal.png" alt="watchlist logo"></a></li>
+            <li class="main-menu-item main-menu-item-click"><a href="#">Filmes</a></li>
+            <li class="main-menu-item main-menu-item-click"><a href="#">Séries</a></li>
+            <li class="main-menu-item main-menu-item-click"><a href="#">Animes</a></li>
+            <li class="main-menu-item main-menu-item-click main-menu-item-dark"><a href="#">Entrar</a></li>
+            <li class="main-menu-item main-menu-item-click"><a href="#">Cadastrar</a></li>
+        </ul>
+    </header>
+    <!-- fim menu -->
+
+    <div class="container">
+
+        <!-- box container -->
+        <div class="box-container lg">
+            <h1 class="box-container-title">Animes</h1>
+            <button onclick="btnClick()">click me</button>
+
+            <!-- box content -->
+            <div class="box-content" id="display">
+                <!-- card -->
+                <div class="card">
+                    <img class="card-post" src="./img/data/poster/exemple-poster.jpg"></img>
+                    <div class="card-title">Fumetsu no Anata E </div>
+                </div>
+                <!-- end card -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function btnClick() {
+        let card =  '<div class="card">' +
+                        '<img class="card-post" src="./img/data/poster/exemple-poster.jpg"></img>' +
+                        '<div class="card-title">Fumetsu no Anata E </div>' +
+                    '</div>';
+
+        display.innerHTML += card;
+        // alert(card);
+    }
+
+</script>
