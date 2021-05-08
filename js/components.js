@@ -8,7 +8,7 @@ function createCompleteElement(tagType, className, innerHTML) {
 }
 
 // return a box component
-function createBoxElement(title) {
+function createBoxElement (title) {
     // building elements
     let boxElement = createCompleteElement("div", "box-container lg", "");
     let titleElement = createCompleteElement("h1", "box-container-title", title);
@@ -22,7 +22,7 @@ function createBoxElement(title) {
 }
 
 // return a card box component
-function createCard(title, src_img) {
+function createCard (title, src_img) {
     // building elements
     let cardElement = createCompleteElement("div", "card", "");
     let imgElement = createCompleteElement("img", "card-post", "");
@@ -35,4 +35,4 @@ function createCard(title, src_img) {
     cardElement.appendChild(titleElement);
 
     return cardElement;
-}  
+}

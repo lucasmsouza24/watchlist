@@ -13,37 +13,23 @@
 </head>
 <body>
     
-    <!-- inicio menu -->
+    <!-- start menu -->
     <header class="main-menu-box">
         <ul class="main-menu-ul">
             <li class="main-menu-item"><a href="index.html"><img src="./img/logotipo-watchlist-horizontal.png" alt="watchlist logo"></a></li>
             <li class="main-menu-item main-menu-item-click"><a href="#">Filmes</a></li>
             <li class="main-menu-item main-menu-item-click"><a href="#">Séries</a></li>
             <li class="main-menu-item main-menu-item-click"><a href="#">Animes</a></li>
-            <li class="main-menu-item main-menu-item-click main-menu-item-dark"><a href="#">Entrar</a></li>
+            <li class="main-menu-item main-menu-item-click margin-left"><a href="#">Sobre</a></li>
+            <li class="main-menu-item main-menu-item-click main-menu-item-entre"><a href="#">Entrar</a></li>
             <li class="main-menu-item main-menu-item-click"><a href="#">Cadastrar</a></li>
         </ul>
     </header>
-    <!-- fim menu -->
+    <!-- end menu -->
 
     <div class="container" id="display_container">
 
     </div>
 </body>
 </html>
-
-<script>
-
-    for (let i = 0; i < 3; i++) {
-        let box = createBoxElement("Séries");
-        for (let j = 0; j < 5; j++) {
-            let card = createCard("Fumetsu no Anata E", "./img/data/poster/exemple-poster.jpg");
-            let content = box.childNodes[1];
-            
-            // add element to content
-            content.appendChild(card);
-        }
-        display_container.appendChild(box);
-    }
-
-</script>
+<script src="./js/build-index-content.js"></script>

@@ -47,17 +47,20 @@
     height: 70px;
     /* margin-top: 0px; */
 }
-.main-menu-item-dark {
+.main-menu-item-entre {
     margin-left: 50px;
-    background-color: rgb(27, 27, 27);
+    background-color: #ce763f;
     /* color: white; */
 }
 
-.main-menu-item-dark:hover {
-    opacity: 0.7;
+.main-menu-item-entre:hover {
+    opacity: 0.9;
     background-color: rgb(27, 27, 27);
 }
 
-.main-menu-item-dark a {
+.main-menu-item-entre a {
     color: white;
+}
+.margin-left {
+    margin-left: 50px;
 }
