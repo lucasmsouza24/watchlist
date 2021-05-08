@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/main-menu.css">
     <link rel="stylesheet" href="./css/box.css">
+    <script src="./js/components.js"></script>
 </head>
 <body>
     
@@ -25,37 +26,24 @@
     </header>
     <!-- fim menu -->
 
-    <div class="container">
+    <div class="container" id="display_container">
 
-        <!-- box container -->
-        <div class="box-container lg">
-            <h1 class="box-container-title">Animes</h1>
-            <button onclick="btnClick()">click me</button>
-
-            <!-- box content -->
-            <div class="box-content" id="display">
-                <!-- card -->
-                <div class="card">
-                    <img class="card-post" src="./img/data/poster/exemple-poster.jpg"></img>
-                    <div class="card-title">Fumetsu no Anata E </div>
-                </div>
-                <!-- end card -->
-            </div>
-        </div>
     </div>
 </body>
 </html>
 
 <script>
 
-    function btnClick() {
-        let card =  '<div class="card">' +
-                        '<img class="card-post" src="./img/data/poster/exemple-poster.jpg"></img>' +
-                        '<div class="card-title">Fumetsu no Anata E </div>' +
-                    '</div>';
-
-        display.innerHTML += card;
-        // alert(card);
+    for (let i = 0; i < 3; i++) {
+        let box = createBoxElement("Séries");
+        for (let j = 0; j < 5; j++) {
+            let card = createCard("Fumetsu no Anata E", "./img/data/poster/exemple-poster.jpg");
+            let content = box.childNodes[1];
+            
+            // add element to content
+            content.appendChild(card);
+        }
+        display_container.appendChild(box);
     }
 
 </script>
