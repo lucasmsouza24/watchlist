@@ -3,7 +3,7 @@ if (localStorage.getItem("wlIsAuth") == "true") {
     const userName = localStorage.getItem("wlUserName");
     idMenuBox.innerHTML = `
     <ul class="main-menu-ul">
-        <li class="main-menu-item"><a href="index.html"><img src="./img/logotipo-watchlist-horizontal.png" alt="watchlist logo"></a></li>
+        <li class="main-menu-item"><a href="index.html"><img src="./img/logotipo-watchlist.png" alt="watchlist logo"></a></li>
         <li class="main-menu-item main-menu-item-click"><a href="#">Filmes</a></li>
         <li class="main-menu-item main-menu-item-click"><a href="#">Séries</a></li>
         <li class="main-menu-item main-menu-item-click"><a href="#">Animes</a></li>
@@ -16,7 +16,7 @@ if (localStorage.getItem("wlIsAuth") == "true") {
     // menu nnão autenticado
     idMenuBox.innerHTML = `
     <ul class="main-menu-ul">
-        <li class="main-menu-item"><a href="index.html"><img src="./img/logotipo-watchlist-horizontal.png" alt="watchlist logo"></a></li>
+        <li class="main-menu-item"><a href="index.html"><img src="./img/logotipo-watchlist.png" alt="watchlist logo"></a></li>
         <li class="main-menu-item main-menu-item-click"><a href="#">Filmes</a></li>
         <li class="main-menu-item main-menu-item-click"><a href="#">Séries</a></li>
         <li class="main-menu-item main-menu-item-click"><a href="#">Animes</a></li>

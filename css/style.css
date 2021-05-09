@@ -1,12 +1,21 @@
+:root {
+    --wl-blue: #5271ff;
+    --wl-dark-blue: #161a42;
+    --wl-orange: #ff914d;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(27, 27, 27);
+    background-image: linear-gradient(black, var(--wl-dark-blue));
 }
 
 .container {
     width: 90%;
+}
+
+.center {
     margin-left: auto;
     margin-right: auto;
 }

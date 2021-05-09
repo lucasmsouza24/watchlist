@@ -7,10 +7,13 @@ function authLogin(inputEmail, inputPwd) {
         localStorage.setItem("wlIsAuth", true);
         localStorage.setItem("wlEmail", inputEmail);
         localStorage.setItem("wlUserName", "Admin");
-        window.location.href = "./user-page.html";
+        
         // console.log("Login success");
+
+        return true;
     } else {
         // console.log("Login error");
+        return false;
     }
 
 }

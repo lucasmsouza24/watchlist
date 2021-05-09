@@ -4,26 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watchlist! - Cadastre-se!</title>
+    <title>Watchlist! - Login!</title>
+    <link rel="shortcut icon" href="./img/logo-watchlist.png" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/main-menu.css">
+    <link rel="stylesheet" href="./css/box.css">
     <script src="./js/login-auth.js"></script>
 </head>
-<body>
-    <input id="idEmail" placeholder="email"> <br><br>
-    <input id="idPwd" placeholder="password"> <br><br>
+<body style="background-image: url('./img/login-background.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-    <button onclick="login()">Auth</button> <br><br>
+    <!-- start menu -->
+    <header class="main-menu-box" id="idMenuBox">
+        
+    </header>
+    <!-- end menu -->
+
+    <!-- input box -->
+    <div class="login-box center" id="idLoginBox">
+        <div class="box-container st center-column-child">
+            <input id="idEmail" placeholder="E-mail" class="login-box-input" type="email" required> 
+            <input id="idPwd" placeholder="Senha" class="login-box-input" type="password"> 
+
+            <button onclick="login()" class="login-box-button">Entrar</button> 
+        </div>
+    </div>
+    <!-- end input box -->
+
 </body>
 </html>
-
+<script src="./js/build-menu.js"></script>
 <script>
 
     function login() {
         const email = idEmail.value;
         const pwd = idPwd.value;
 
-        authLogin(email, pwd);
+        if (authLogin(email, pwd)) {
+            window.location.href = "./user-page.html";
+        } else {
+            let 
+        }
     }
 
 </script>
