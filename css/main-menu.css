@@ -5,8 +5,8 @@
     font-size: 20px;
     background-color: var(--wl-dark-blue);
     border-bottom: white solid 2px;
+    opacity: 0.8;
 }
-
 .main-menu-ul {
     width: 90%;
     height: 100%;
