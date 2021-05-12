@@ -19,10 +19,17 @@
     <!-- end menu -->
 
     <div class="media-box">
-        <img class="title-post" src="./img/data/poster/exemple-poster.jpg">
+        <div>
+            <img class="title-post" src="./img/data/poster/exemple-poster.jpg">
+            <div class="title-info">
+                <p>Tipo: <span>Anime</span></p>
+                <p>Genero: <span>Drama</span></p>
+                <p>Ano: <span>2021</span></p>
+            </div>
+        </div>
         <div class="title-text-box">
             <h1 class="title-text-title">Fumetsu no Anata E </h1>
-            <p>
+            <p id="titleTextSynopsis">
                 It, a mysterious immortal being, is sent to the Earth with no emotions nor identity. However, It is able to take the shape of those around that have a strong impetus.
                 At first, It is a sphere. Then, It imitates the form of a rock. As the temperature drops and snow falls atop the moss, It inherits the moss. When an injured, lone wolf comes limping by and lays down to die, It takes on the form of the animal. Finally, It gains consciousness and begins to traverse the empty tundra until It meets a boy.
                 The boy lives alone in a ghost town, which the adults abandoned long ago in search of the paradise said to exist far beyond the endless sea of white tundra. However, their efforts were for naught, and now the boy is in a critical state.
@@ -31,14 +38,66 @@
         </div>
 
         <!-- score box -->
-        <div class="score-box">
-            <div class="score-box-text">
-                Score: <br>
-                <span id="scoreValue">8.6</span> / 10
+        <div class="right-box">
+            <div class="score-box">
+                <div class="score-box-text">
+                    Score: <br>
+                    <span id="scoreValue">8.6</span> / 10
+                </div>
             </div>
+
+            <form class="form-user-has-media">
+                <div class="form-input-box">
+                    Episódios:
+                    <input id="idEpValue" type="number" max="20" min="0" value="0"> / <span id="idMaxEp"> 20 </span>
+                    <div onclick="add1_ep()"> + </div>
+                </div>
+
+                <div class="form-input-box">
+                    Situação:
+                    <select name="situation" id="idTitleSituation" required>
+                        <option disabled selected value>Selecione uma opção</option>
+                        <option value="0">Assistindo</option>
+                        <option value="1">Planejo Assistir</option>
+                        <option value="2">Completo</option>
+                        <option value="3">Nao vejo mais</option>
+                    </select>
+                </div>
+
+                <div class="form-input-box">
+                    Nota: 
+                    <select name="score" id="idScore" required>
+                        <option disabled selected value>Escolha</option>
+                        <option value="10">Obra de Arte (10)</option>
+                        <option value="9">Ótimo (9)</option>
+                        <option value="8">Muito Bom (8)</option>
+                        <option value="7">Bom (7)</option>
+                        <option value="6">Legal (6)</option>
+                        <option value="5">Médio (5)</option>
+                        <option value="4">Ruim (4)</option>
+                        <option value="3">Muito Ruim (3)</option>
+                        <option value="2">Horrivel (2)</option>
+                        <option value="1">Apavorante (1)</option>
+                    </select>
+                </div>
+
+                <input type="submit" value="Atualizar" class="btn btn-green">
+            </form>
         </div>
         <!-- end score box -->
     </div>
 </body>
 </html>
 <script src="./js/build-menu.js"></script>
+
+<script>
+
+    function add1_ep() {
+        let eps = idEpValue.value;
+
+        if (eps < 20) {
+            idEpValue.value = ++eps;
+        }
+    }
+
+</script>

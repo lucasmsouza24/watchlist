@@ -2,6 +2,8 @@
     --wl-blue: #5271ff;
     --wl-dark-blue: #161a42;
     --wl-orange: #ff914d;
+    --wl-green: rgb(131, 235, 136);
+    --wl-dark-green: rgb(89, 163, 93);
 }
 
 body {

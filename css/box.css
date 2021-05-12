@@ -181,9 +181,16 @@
     text-align: center;
 }
 
+.right-box {
+    /* border: 1px solid red; */
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+}
+
 .score-box {
     background-color: var(--wl-blue);
-    width: 15%;
+    width: 150px;
     height: 150px;
     margin-left: auto;
     margin-right: auto;
@@ -203,5 +210,108 @@
 
 .score-box:hover {
     box-shadow: 0px 0px 10px 5px var(--wl-orange);
+}
+
+.title-info {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.form-user-has-media {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-box {
+    /* border: 1px solid yellow; */
+    width: 96%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    background-color: rgb(40, 40, 40);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-input-box input, .form-input-box select {
+    width: 50px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(30, 30, 30);
+    border-bottom: 2px solid var(--wl-blue);
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+}
+
+.form-input-box input::-webkit-outer-spin-button,
+.form-input-box input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-input-box select {
+    width: auto;
+    height: 30px;
+    /* font-size: 15px; */
+}
+
+.form-input-box input:focus, .form-input-box select:focus {
+    outline: none;
+}
+
+.form-input-box div {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 50%;
+    /* display: inline-block; */
+    /* border: 1px solid red; */
+    background-color: var(--wl-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgb(30, 30, 30);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-input-box div:hover {
+    background-color: var(--wl-dark-green);
+    color: white;
+    box-shadow: 0px 0px 5px 1px white;
+}
+
+.btn {
+    border-style: none;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    font-size: 18px;
+    border: 2px white solid;
+    border-radius: 5px;
+    cursor: pointer;
+    /* width: 96%; */
+    align-self: center;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+.btn-green {
+    border: 2px var(--wl-green) solid;
+    color: var(--wl-green);
 }
 /* end title box */
