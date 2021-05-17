@@ -20,7 +20,7 @@
     <!-- end menu -->
 
     <!-- input box -->
-    <div class="login-box center" id="idLoginBox">
+    <div class="login-box center" id="idLoginBox" action="POST" >
         <form class="box-container st center-column-child">
             <input id="idEmail" placeholder="E-mail" class="login-box-input" type="email" required> 
             <input id="idPwd" placeholder="Senha" class="login-box-input" type="password">
@@ -35,15 +35,48 @@
 <script src="./js/build-menu.js"></script>
 <script>
 
-    function login() {
-        const email = idEmail.value;
-        const pwd = idPwd.value;
+    // function login() {
+    //     const email = idEmail.value;
+    //     const pwd = idPwd.value;
 
-        if (authLogin(email, pwd)) {
-            window.location.href = "./user-page.html";
-        } else {
-            let 
-        }
+    //     if (authLogin(email, pwd)) {
+    //         alert("logou");
+    //         window.location.href = "";
+    //     } else {
+    //         alert("não logou");
+    //     }
+    // }
+
+    function login() {
+        var form = new URLSearchParams(new FormData(form_login));
+        fetch("/users/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    // sessionStorage.login_usuario_meuapp = json.login;
+                    // sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    // window.location.href = './index.html';
+                    console.log(json);
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
     }
 
 </script>

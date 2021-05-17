@@ -1,0 +1,31 @@
+{
+  "name": "watchlist",
+  "version": "1.0.0",
+  "description": "Watchlist",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasmsouza24/watchlist.git"
+  },
+  "author": "Lucas Mesquita de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasmsouza24/watchlist/issues"
+  },
+  "homepage": "https://github.com/lucasmsouza24/watchlist#readme",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "mssql": "^6.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "sequelize": "^5.21.2",
+    "tedious": "^6.6.0"
+  }
+}

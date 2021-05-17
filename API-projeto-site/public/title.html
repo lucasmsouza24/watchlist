@@ -20,20 +20,17 @@
 
     <div class="media-box">
         <div>
-            <img class="title-post" src="./img/data/poster/exemple-poster.jpg">
+            <img class="title-post" id="titleImg">
             <div class="title-info">
-                <p>Tipo: <span>Anime</span></p>
-                <p>Genero: <span>Drama</span></p>
-                <p>Ano: <span>2021</span></p>
+                <p>Tipo: <span id="titleType"></span></p>
+                <p>Genero: <span id="titleGenre"></span></p>
+                <p>Ano: <span id="titleYear"></span></p>
             </div>
         </div>
         <div class="title-text-box">
-            <h1 class="title-text-title">Fumetsu no Anata E </h1>
+            <h1 class="title-text-title" id="titleTitle">Fumetsu no Anata E </h1>
             <p id="titleTextSynopsis">
-                It, a mysterious immortal being, is sent to the Earth with no emotions nor identity. However, It is able to take the shape of those around that have a strong impetus.
-                At first, It is a sphere. Then, It imitates the form of a rock. As the temperature drops and snow falls atop the moss, It inherits the moss. When an injured, lone wolf comes limping by and lays down to die, It takes on the form of the animal. Finally, It gains consciousness and begins to traverse the empty tundra until It meets a boy.
-                The boy lives alone in a ghost town, which the adults abandoned long ago in search of the paradise said to exist far beyond the endless sea of white tundra. However, their efforts were for naught, and now the boy is in a critical state.
-                Acquiring the form of the boy, It sets off on a never-ending journey, in search of new experiences, places, and people.
+
             </p>
         </div>
 
@@ -49,8 +46,8 @@
             <form class="form-user-has-media">
                 <div class="form-input-box">
                     Episódios:
-                    <input id="idEpValue" type="number" max="20" min="0" value="0"> / <span id="idMaxEp"> 20 </span>
-                    <div onclick="add1_ep()"> + </div>
+                    <input id="idEpValue" type="number" min="0" value="0"> / <span id="idMaxEp"></span>
+                    <div id="titleMaxEp"> + </div>
                 </div>
 
                 <div class="form-input-box">
@@ -92,12 +89,37 @@
 
 <script>
 
-    function add1_ep() {
+    function add1_ep(max) {
         let eps = idEpValue.value;
 
-        if (eps < 20) {
+        if (eps < max) {
             idEpValue.value = ++eps;
         }
     }
 
+    // preenchendo parte dinamica do site
+    fetch(`/leituras/media/1`)
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (dadosMedia) {
+                // tratamento dos dados
+                let data = dadosMedia[0];
+                console.log(data);
+
+                titleType.innerHTML = data.type;
+                titleGenre.innerHTML = data.genre_name;
+                titleYear.innerHTML = data.since_year;
+                titleImg.setAttribute("src", data.banner_url);
+                titleTitle.innerHTML = data.title;
+                titleTextSynopsis.innerHTML = data.synopsis;
+                idMaxEp.innerHTML = data.total_eps;
+                idEpValue.setAttribute("max", data.total_eps);
+                titleMaxEp.setAttribute("onclick", `add1_ep(${data.total_eps})`);
+            })
+        }
+    })
+    .catch(function (error) {
+        console.log("error: ", error.message);
+    });
+    
 </script>
