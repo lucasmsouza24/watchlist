@@ -21,13 +21,14 @@
 
     <!-- input box -->
     <div class="login-box center" id="idLoginBox">
-        <form class="box-container st center-column-child">
+        <form class="box-container st center-column-child" onsubmit="cadastrar()">
             
             <input id="idNick" placeholder="Apelido" class="login-box-input" type="text" required>
             <input id="idEmail" placeholder="E-mail" class="login-box-input" type="email" required> 
-            <input id="idPwd" placeholder="Senha" class="login-box-input" type="password" required> 
+            <input id="idPwd" placeholder="Senha" class="login-box-input" type="password" minlength="6" required> 
 
-            <input type="submit" onclick="login()" class="login-box-button" value="Cadastrar"></input> 
+            <input type="button" onclick="cadastrar()" class="login-box-button" value="Cadastrar"></input> 
+
         </form>
     </div>
     <!-- end input box -->
@@ -37,15 +38,21 @@
 <script src="./js/build-menu.js"></script>
 <script>
 
-    function login() {
+    function cadastrar() {
         const email = idEmail.value;
         const pwd = idPwd.value;
+        const nick = idNick.value;
 
-        if (authLogin(email, pwd)) {
-            window.location.href = "./user-page.html";
-        } else {
-            let 
-        }
-    }
+        fetch(`/users/cadastrar?email=${email}&nick=${nick}&pwd=${pwd}`, {
+            method: "GET",
+        }).then(resposta => {
+            
+            if(resposta.ok) {
+                console.log("ok");
+            } else {
+                console.log("erro de cadastro");
+            }
+        });
+    }   
 
 </script>

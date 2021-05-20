@@ -1,29 +1,58 @@
+var express = require('express');
+var router = express.Router();
+var sequelize = require('../models').sequelize;
+var users = require('../models').users;
+var env = process.env.NODE_ENV || 'development';
+
 // autenticar usuario
-router.post('/autenticar', function(req, res, next) {
-	console.log('Recuperando usuário por login e senha');
+router.get('/autenticar', function(req, res, next) {
 
-	var email = req.body.email; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var pwd = req.body.pwd; // depois de .body, use o nome (name) do campo em seu formulário de login	
+	// armazenando valores dos inputs
+	let email = req.query.email;
+	let pwd = req.query.pwd;
+
+	if (env == 'dev') {
+		// abaixo, escreva o select de dados para o Workbench
+		instrucaoSql = `SELECT * FROM tb_user WHERE email = '${email}' AND pwd = '${pwd}';`;
+	}
+	else {
+		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
+	}
 	
-	let instrucaoSql = `SELECT * FROM tb_user WHERE email='${email}' AND pwd='${pwd}'`;
-
 	sequelize.query(instrucaoSql, {
-		model: Usuario
-	}).then(resultado => {
-		console.log(`Encontrados: ${resultado.length}`);
-
-		if (resultado.length == 1) {
-			// sessoes.push(resultado[0].dataValues.login);
-			// console.log('sessoes: ',sessoes);
-			res.json(resultado[0]);
-		} else if (resultado.length == 0) {
-			res.status(403).send('Login e/ou senha inválido(s)');
-		} else {
-			res.status(403).send('Mais de um usuário com o mesmo login e senha!');
-		}
-
+		type: sequelize.QueryTypes.SELECT
+	})
+	.then(resultado => {
+		// console.log("Tamanho da string: ", resultado.length);
+		res.json(resultado);
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
 });
+
+// cadastrar usuário
+router.get('/cadastrar', function(req, res, next) {
+
+	// armazenando valores dos inputs
+	let email = req.query.email;
+	let pwd = req.query.pwd;
+	let nick = req.query.nick;
+
+	if (env == 'dev') {
+		// abaixo, escreva o select de dados para o Workbench
+		instrucaoSql = `INSERT INTO tb_user(nick, email, pwd) VALUES ('${nick}', '${email}', '${pwd}');`;
+	}
+	
+	sequelize.query(instrucaoSql, {
+		type: sequelize.QueryTypes.SELECT
+	})
+	.then(resultado => {
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+module.exports = router;

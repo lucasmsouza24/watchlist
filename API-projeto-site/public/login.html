@@ -21,11 +21,11 @@
 
     <!-- input box -->
     <div class="login-box center" id="idLoginBox" action="POST" >
-        <form class="box-container st center-column-child">
-            <input id="idEmail" placeholder="E-mail" class="login-box-input" type="email" required> 
-            <input id="idPwd" placeholder="Senha" class="login-box-input" type="password">
+        <form class="box-container st center-column-child" id="form_login" onsubmit="login()">
+            <input id="idEmail" placeholder="E-mail" class="login-box-input" type="email" name="email" required> 
+            <input id="idPwd" placeholder="Senha" class="login-box-input" type="password" name="pwd" required>
 
-            <button onclick="login()" class="login-box-button">Entrar</button> 
+            <button type="submit" class="login-box-button" value="Entrar">Entrar</button> 
         </form>
     </div>
     <!-- end input box -->
@@ -48,31 +48,36 @@
     // }
 
     function login() {
-        var form = new URLSearchParams(new FormData(form_login));
-        fetch("/users/autenticar", {
-            method: "POST",
-            body: formulario
+        // armazenando valores dos inputs
+        const email = idEmail.value;
+        const pwd = idPwd.value;
+
+        fetch(`/users/autenticar?email=${email}&pwd=${pwd}`, {
+            method: "GET",
+            // body: form
         }).then(resposta => {
 
             if (resposta.ok) {
 
                 resposta.json().then(json => {
 
-                    // sessionStorage.login_usuario_meuapp = json.login;
-                    // sessionStorage.nome_usuario_meuapp = json.nome;
-
-                    // window.location.href = './index.html';
                     console.log(json);
+                    console.log(json[0]);
+                    
+                    if (json.length == 0) {
+                        console.log("erro de login");
+                    } else {
+                        let user = JSON.stringify(json[0]);
+
+                        localStorage.setItem("watchlist_user", user);
+                        window.location.href = './index.html';
+                    }
                 });
 
             } else {
 
                 console.log('Erro de login!');
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizar_aguardar(texto);
-                });
+                
             }
         });
 

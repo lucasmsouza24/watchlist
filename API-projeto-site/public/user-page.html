@@ -4,21 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
+    <title>Watchlist!</title>
+    <link rel="stylesheet" href="./css/main-menu.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/user.css">
 </head>
 <body>
+
+    <!-- start menu -->
+    <header class="main-menu-box" id="idMenuBox">
+        
+    </header>
+    <!-- end menu -->
+
+    <div class="container-sm center geral-box-user">
+        <div class="user-box">
+
+        </div>
+
+        <div class="user-box"></div>
+    </div>
+
     <h1 id="idUserName"></h1>
     <button onclick="getout()">Sair</button>
 </body>
 </html>
-
+<script src="./js/build-menu.js"></script>
 <script>
 
     function getout() {
         localStorage.clear();
         window.location.href = "index.html";
     }
-
-    idUserName.innerHTML = localStorage.getItem("wlUserName");
 
 </script>
