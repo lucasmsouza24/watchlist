@@ -98,7 +98,12 @@
     }
 
     // preenchendo parte dinamica do site
-    fetch(`/leituras/media/1`)
+
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let idmedia = params.get("idmedia");
+    console.log(idmedia)
+
+    fetch(`/leituras/media?idmedia=${idmedia}`)
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (dadosMedia) {

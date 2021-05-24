@@ -1,11 +1,147 @@
 .user-box {
-    width: 20%;
-    height: 300px;
-    background-color: red;
-    margin: 10px
+    width: 23%;
+    height: 580px;
+    margin: 10px;
+    border: 2px solid var(--wl-dark-blue);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    /* background-color: red; */
+}
+
+.user-box .username {
+    font-size: 25px;
+    color: rgb(58, 133, 199);
+    cursor: pointer;
+}
+
+.user-box .username:hover {
+    color: rgb(76, 35, 114);
+}
+
+.user-box:hover {
+    border: 2px solid rgb(209, 209, 209);
+}
+
+.user-box div {
+    margin-top: 20px;
 }
 
 .geral-box-user {
     display: flex;
     flex-direction: row;
+    /* justify-content: space-around; */
+    border: 1px var(--wl-dark-blue) solid;
+}
+
+.chartBox {
+    /* border: 1px red solid; */
+    width: 90%;
+    /* margin-top: 100px; */
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+
+.status-box-container {
+    /* border: 1px solid red; */
+    width: 73%;
+    height: auto;
+    margin-top: 10px;
+    /* border-radius: 10px; */
+}
+
+.status-box {
+    width: 100%;
+    /* border: 1px solid blueviolet; */
+    /* height: 300px; */
+    padding: 10px;
+    color: white;
+}
+
+.status-box-title {
+    text-justify: center;
+}
+
+.status-box-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.card {
+    width: 22%;
+    height: 290px;
+    /* border: 1px rgb(138, 90, 0) solid; */
+    background-color: rgba(40, 40, 40, 0.486);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.card:hover {
+    opacity: 0.8;
+    /* background-color: rgb(51, 51, 51); */
+    border-bottom: 1px solid var(--wl-blue);
+    box-shadow: var(--wl-blue) 0px 0px 5px;
+}
+
+.card-post {
+    width: 160px;
+    height: 220px;
+    background-color: black;
+    align-self: center;
+    justify-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    align-self: center;
+    overflow: hidden;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    /* background-color: red; */
+}
+
+/* btn */
+.btn {
+    border-style: none;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    font-size: 18px;
+    border: 2px white solid;
+    border-radius: 5px;
+    cursor: pointer;
+    /* width: 96%; */
+    align-self: center;
+}
+/* fim btn */
+
+.btn-sair {
+    background-color: rgb(224, 63, 63);
+    width: 100px;
+}
+
+.btn-sair:hover {
+    opacity: 0.7;
+}
+
+.btn-add-obra {
+    background-color: rgb(60, 76, 214);
+}
+.btn-add-obra:hover {
+    background-color: rgba(60, 75, 214, 0.548);
 }

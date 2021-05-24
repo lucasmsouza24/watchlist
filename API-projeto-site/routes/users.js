@@ -53,6 +53,7 @@ router.get('/cadastrar', function(req, res, next) {
 		console.error(erro);
 		res.status(500).send(erro.message);
 	});
+	
 });
 
 module.exports = router;

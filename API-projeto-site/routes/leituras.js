@@ -34,11 +34,11 @@ router.get('/users', function(req, res, next) {
 });
 
 // retorna um filme/serie/anime
-router.get('/media/:idmedia', function(req, res, next) {
+router.get('/media', function(req, res, next) {
 	// console.log('Recuperando medias');
 	
-	var idmedia = req.body.idmedia; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idmedia = req.params.idmedia;
+	let idmedia = req.query.idmedia;
+	console.log(idmedia);
 	
 	let instrucaoSql = "";
 	
@@ -54,6 +54,7 @@ router.get('/media/:idmedia', function(req, res, next) {
 		type: sequelize.QueryTypes.SELECT
 	})
 	.then(resultado => {
+		console.log(resultado);
 		res.json(resultado);
 	}).catch(erro => {
 		console.error(erro);
@@ -62,11 +63,10 @@ router.get('/media/:idmedia', function(req, res, next) {
 });
 
 // retorna últimos 5 filmes/series/animes
-router.get('/top5media/:idmedia', function(req, res, next) {
+router.get('/top5media', function(req, res, next) {
 	// console.log('Recuperando medias');
-	
-	var idmedia = req.body.idmedia; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idmedia = req.params.idmedia;
+
+	let idmedia = req.params.idmedia;
 	
 	let instrucaoSql = "";
 	

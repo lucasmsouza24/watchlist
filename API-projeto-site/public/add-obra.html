@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist! - Obra</title>
+    <link rel="shortcut icon" href="./img/logo-watchlist.png" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main-menu.css">
+    <link rel="stylesheet" href="./css/box.css">
+</head>
+<body>
+    
+    <!-- start menu -->
+    <header class="main-menu-box" id="idMenuBox">
+        
+    </header>
+    <!-- end menu -->
+
+    <div class="box-alert center">
+        <p>Antes de adicionar uma obra, tenha certeza de que ela não está no nosso catálogo!</p>
+    </div>
+
+    <!-- input box -->
+    <div class="login-box center" id="idLoginBox" style="margin-top: 0px; margin-bottom: 77px;">
+        <form class="box-container st center-column-child send-media" onsubmit="addObra()">
+
+            <input id="idTitle" placeholder="Título" class="login-box-input" type="text" required>
+
+            <select name="type" id="idType" class="login-box-input" required>
+                <option value="movie">Filme</option>
+                <option value="tbserie">Série</option>
+                <option value="anime">Anime</option>
+            </select>
+
+            <textarea name="synopsis" placeholder="sinópse" id="idSynopsis" cols="30" rows="10" class="login-box-input" required></textarea>
+
+            <input id="" placeholder="Senha" class="login-box-input" type="" minlength="6" required>
+            
+            <input type="text" placeholder="ano" class="login-box-input">
+
+            <input type="number" maxlength="4" placeholder="Total de episódios (1 se for filme)" class="login-box-input">
+
+            <label for="inputFile" class="color-white">Poster:</label>
+            <input type="file" id="idFile" class="login-box-input input-file">
+
+            <input type="submit" onclick="cadastrar()" class="login-box-button" value="Cadastrar"></textarea> 
+
+        </form>
+    </div>
+    <!-- end input box -->
+</body>
+
+<script src="./js/build-menu.js"></script>
