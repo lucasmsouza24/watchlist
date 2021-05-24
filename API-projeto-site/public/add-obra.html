@@ -28,17 +28,23 @@
 
             <input id="idTitle" placeholder="Título" class="login-box-input" type="text" required>
 
+            <!-- formato da obra -->
             <select name="type" id="idType" class="login-box-input" required>
                 <option value="movie">Filme</option>
                 <option value="tbserie">Série</option>
                 <option value="anime">Anime</option>
             </select>
 
+            <!-- genero da obra -->
+            <select name="genre" id="idGenre" class="login-box-input">
+                
+            </select>
+
             <textarea name="synopsis" placeholder="sinópse" id="idSynopsis" cols="30" rows="10" class="login-box-input" required></textarea>
 
             <input id="" placeholder="Senha" class="login-box-input" type="" minlength="6" required>
             
-            <input type="text" placeholder="ano" class="login-box-input">
+            <input type="text" placeholder="ano" class="login-box-input" maxlength="4" min="1900">
 
             <input type="number" maxlength="4" placeholder="Total de episódios (1 se for filme)" class="login-box-input">
 
@@ -48,8 +54,10 @@
             <input type="submit" onclick="cadastrar()" class="login-box-button" value="Cadastrar"></textarea> 
 
         </form>
+        
     </div>
     <!-- end input box -->
 </body>
 
 <script src="./js/build-menu.js"></script>
+<script src="./js/build-genre-select.js"></script>

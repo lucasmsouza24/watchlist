@@ -89,4 +89,23 @@ router.get('/top5media', function(req, res, next) {
 	});
 });
 
+router.get('/genres', function(req, res, next) {
+
+	let instrucaoSql = "";
+
+	if (env == "dev") {
+		instrucaoSql = "SELECT * FROM tb_genre;";
+	}
+
+	sequelize.query(instrucaoSql, {
+		type: sequelize.QueryTypes.SELECT
+	})
+	.then(resultado => {
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	})
+})
+
 module.exports = router;
