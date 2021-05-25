@@ -49,11 +49,12 @@ router.get('/cadastrar', function(req, res, next) {
 	})
 	.then(resultado => {
 		res.json(resultado);
+		res.status(200)
+		
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
 	});
-	
 });
 
 module.exports = router;

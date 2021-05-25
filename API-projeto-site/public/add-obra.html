@@ -24,14 +24,15 @@
 
     <!-- input box -->
     <div class="login-box center" id="idLoginBox" style="margin-top: 0px; margin-bottom: 77px;">
-        <form class="box-container st center-column-child send-media" onsubmit="addObra()">
-
-            <input id="idTitle" placeholder="Título" class="login-box-input" type="text" required>
+        <form method="POST" enctype="multipart/form-data" class="box-container st center-column-child send-media" id="idForm" action="/media/add">
+            
+            <!-- titulo -->
+            <input id="idTitle" placeholder="Título" class="login-box-input" name="title" type="text" required>
 
             <!-- formato da obra -->
             <select name="type" id="idType" class="login-box-input" required>
                 <option value="movie">Filme</option>
-                <option value="tbserie">Série</option>
+                <option value="tvserie">Série</option>
                 <option value="anime">Anime</option>
             </select>
 
@@ -40,24 +41,39 @@
                 
             </select>
 
+            <!-- sinopse -->
             <textarea name="synopsis" placeholder="sinópse" id="idSynopsis" cols="30" rows="10" class="login-box-input" required></textarea>
-
-            <input id="" placeholder="Senha" class="login-box-input" type="" minlength="6" required>
             
-            <input type="text" placeholder="ano" class="login-box-input" maxlength="4" min="1900">
+            <!-- ano de lançamento da obra -->
+            <input name="year" type="text" placeholder="ano" class="login-box-input" maxlength="4" minlength="4" min="1900">
 
-            <input type="number" maxlength="4" placeholder="Total de episódios (1 se for filme)" class="login-box-input">
+            <!-- total de episódios -->
+            <input name="totalEps" type="number" maxlength="4" placeholder="Total de episódios (1 se for filme)" class="login-box-input">
 
+            <!-- poster da obra -->
             <label for="inputFile" class="color-white">Poster:</label>
-            <input type="file" id="idFile" class="login-box-input input-file">
+            <input name="file" type="file" id="idFile" class="login-box-input input-file" required>
 
-            <input type="submit" onclick="cadastrar()" class="login-box-button" value="Cadastrar"></textarea> 
+            <!-- id do usuário logado -->
+            <input name="userId" type="hidden" id="userId">
 
+            <!-- botão de submit -->
+            <input type="submit" class="login-box-button" value="Cadastrar" id="btnSubmit">
         </form>
-        
+
     </div>
     <!-- end input box -->
 </body>
 
 <script src="./js/build-menu.js"></script>
 <script src="./js/build-genre-select.js"></script>
+
+<script>
+
+    // console.log (localStorage.key(1))
+    let sessionJSON = localStorage.getItem("watchlist_user")
+    let sessionOBJ = JSON.parse(sessionJSON);
+
+    userId.setAttribute("value", sessionOBJ.pk_user); 
+
+</script>
