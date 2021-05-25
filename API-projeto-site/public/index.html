@@ -32,4 +32,14 @@
         window.location.href = `title.html?idmedia=${id}`;
     }
 
+    let params = new URLSearchParams(document.location.search.substring(1))
+    let status = params.get("status");
+
+    setTimeout(function() {
+        if (status == "aviso") {
+            alert("Obra adicionada! verifique o catálogo")
+        }
+    }, 300)
+    
 </script>
+
