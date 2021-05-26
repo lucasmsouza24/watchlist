@@ -86,45 +86,4 @@
 </body>
 </html>
 <script src="./js/build-menu.js"></script>
-
-<script>
-
-    function add1_ep(max) {
-        let eps = idEpValue.value;
-
-        if (eps < max) {
-            idEpValue.value = ++eps;
-        }
-    }
-
-    // preenchendo parte dinamica do site
-
-    let params = new URLSearchParams(document.location.search.substring(1));
-    let idmedia = params.get("idmedia");
-    console.log(idmedia)
-
-    fetch(`/leituras/media?idmedia=${idmedia}`)
-    .then(function (response) {
-        if (response.ok) {
-            response.json().then(function (dadosMedia) {
-                // tratamento dos dados
-                let data = dadosMedia[0];
-                console.log(data);
-
-                titleType.innerHTML = data.type;
-                titleGenre.innerHTML = data.genre_name;
-                titleYear.innerHTML = data.since_year;
-                titleImg.setAttribute("src", "./upload/" + data.banner_url);
-                titleTitle.innerHTML = data.title;
-                titleTextSynopsis.innerHTML = data.synopsis;
-                idMaxEp.innerHTML = data.total_eps;
-                idEpValue.setAttribute("max", data.total_eps);
-                titleMaxEp.setAttribute("onclick", `add1_ep(${data.total_eps})`);
-            })
-        }
-    })
-    .catch(function (error) {
-        console.log("error: ", error.message);
-    });
-    
-</script>
+<script src="./js/media-page.js"></script>

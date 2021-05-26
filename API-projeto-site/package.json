@@ -4,7 +4,7 @@
   "description": "Watchlist",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
