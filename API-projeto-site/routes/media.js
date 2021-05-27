@@ -165,4 +165,30 @@ router.get("/getAverageScore", (req, res, next) => {
     })
 })
 
+router.post("/addComment", (req, res, next) => {
+    let b = req.body;
+
+    let sql = `INSERT INTO comments VALUES 
+    (null, '${b.comment}', ${b.idmedia}, ${b.iduser});`
+
+    sequelize.query(sql, {
+        type: sequelize.QueryTypes.SELECT
+    }).then(result => {
+        // res.json(result);
+    })
+
+    res.redirect(`/title.html?idmedia=${b.idmedia}`)
+})
+
+router.get("/getComments", (req, res, next) => {
+    let idmedia = req.query.idmedia;
+
+    let sql = `select nick, comment_text from comments inner join tb_user on fk_user = pk_user where fk_media = ${idmedia};`
+
+    sequelize.query(sql, {
+        type: sequelize.QueryTypes.SELECT
+    }).then(result => {
+        res.json(result);
+    })
+})
 module.exports = router;

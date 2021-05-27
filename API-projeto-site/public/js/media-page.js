@@ -63,6 +63,10 @@ if (localStorage.getItem("watchlist_user") === null) {
     // logado
     // console.log("logado")
     iduser = JSON.parse(localStorage.getItem("watchlist_user")).pk_user;
+
+    inputUser.value = iduser
+    inputMedia.value = idmedia
+
     // console.log("id", iduser)
     fetch(`/media/getAvaliacao?idmedia=${idmedia}&iduser=${iduser}`, {
         method: "GET"
@@ -154,3 +158,30 @@ function atualize() {
 
     window.location.reload();
 }
+
+// comentarios
+
+function createComment(nick, text) {
+    return `
+    <div class="comment-card">
+        @<span class="comment-nick">${nick}</span> <br><br> 
+        <div class="comment-text">
+            ${text}
+        </div>
+    </div>
+    `
+}
+
+fetch(`/media/getComments?idmedia=${idmedia}`, {
+    method: "GET"
+}).then(response => {
+    response.json().then(data => {
+        if (data.length > 0) {
+            divCommentContent.innerHTML = ""
+            for (let i = 0; i <= data.length - 1; i++) {
+                // console.log(data);
+                divCommentContent.innerHTML += createComment(data[i].nick, data[i].comment_text)
+            }
+        }
+    })
+})
