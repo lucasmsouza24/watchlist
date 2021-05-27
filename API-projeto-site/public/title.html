@@ -43,10 +43,10 @@
                 </div>
             </div>
 
-            <form class="form-user-has-media">
+            <form class="form-user-has-media" id="idForm">
                 <div class="form-input-box">
                     Episódios:
-                    <input id="idEpValue" type="number" min="0" value="0"> / <span id="idMaxEp"></span>
+                    <input name="eps_assistidos" id="idEpValue" type="number" min="0" value="0"> / <span id="idMaxEp"></span>
                     <div id="titleMaxEp"> + </div>
                 </div>
 
@@ -78,7 +78,7 @@
                     </select>
                 </div>
 
-                <input type="submit" value="Atualizar" class="btn btn-green">
+                <input type="button" value="Atualizar" class="btn btn-green" id="IdBtnSubmit" onclick="atualize()">
             </form>
         </div>
         <!-- end score box -->

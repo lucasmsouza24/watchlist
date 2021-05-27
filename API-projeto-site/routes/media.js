@@ -3,6 +3,7 @@ var router = express.Router();
 var sequelize = require('../models').sequelize;
 var env = process.env.NODE_ENV || 'development';
 const multer = require("multer");
+express.json();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -123,17 +124,11 @@ router.get("/getAvaliacao", (req, res, next) => {
     })
 });
 
-router.post("/addAvaliacao", (req, res, next) => {
-    let iduser = req.body.iduser
-    let idmedia = req.body.idmedia
-    let score = req.body.score
-    let situation = req.body.situation
-    let eps_assistidos = req.body.eps_assistidos;
-
-    console.log(req.body)
+router.get("/addAvaliacao", (req, res, next) => {
+    let body = req.query;
 
     let sql = `INSERT INTO tb_avaliacao VALUES
-    (null, ${score}, '${situation}', ${eps_assistidos}, ${iduser}, ${idmedia})`
+    (null, ${body.score}, '${body.situation}', ${body.eps_assistidos}, ${body.iduser}, ${body.idmedia})`
 
     sequelize.query(sql, {
         type: sequelize.QueryTypes.SELECT
@@ -144,24 +139,18 @@ router.post("/addAvaliacao", (req, res, next) => {
     // res.redirect(`/title.html?idmedia=${idmedia}`);
 })
 
-router.post("/updateAvaliacao", (req, res, next) => {
-    let iduser = req.body.iduser
-    let idmedia = req.body.idmedia
-    let score = req.body.score
-    let situation = req.body.situation
-    let eps_assistidos = req.body.eps_assistidos;
+router.get("/updateAvaliacao", (req, res, next) => {
+    let body = req.query;
 
-    res.json(req.body)
-
-    let sql = `UPDATE tb_avaliacao SET score = ${score}, situation = '${situation}', eps_assistidos = ${eps_assistidos} WHERE fk_user = ${iduser} AND fk_media = ${idmedia};`;
+    let sql = `UPDATE tb_avaliacao SET score = ${body.score}, situation = '${body.situation}', eps_assistidos = ${body.eps_assistidos} WHERE fk_user = ${body.iduser} AND fk_media = ${body.idmedia};`;
 
     sequelize.query(sql, {
         type: sequelize.QueryTypes.SELECT
     }).then(result => {
         res.json({
             ok: true
-        })
-    });
+        });
+    })
 })
 
 module.exports = router;

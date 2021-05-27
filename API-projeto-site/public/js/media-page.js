@@ -1,3 +1,7 @@
+// var global para controle de insert/update
+let temAvaliacao = false
+let iduser = null;
+
 // adicionando valor no input "episódios assistidos"
 function add1_ep(max) {
     let eps = idEpValue.value;
@@ -38,13 +42,14 @@ fetch(`/media/single?idmedia=${idmedia}`, {
     console.log("error: ", error.message);
 });
 
+// verificando se o usuário está logado
 if (localStorage.getItem("watchlist_user") === null) {
     // deslogado
-    console.log("deslogado")
+    // console.log("deslogado")
 } else {
     // logado
     // console.log("logado")
-    let iduser = JSON.parse(localStorage.getItem("watchlist_user")).pk_user;
+    iduser = JSON.parse(localStorage.getItem("watchlist_user")).pk_user;
     // console.log("id", iduser)
     fetch(`/media/getAvaliacao?idmedia=${idmedia}&iduser=${iduser}`, {
         method: "GET"
@@ -55,6 +60,7 @@ if (localStorage.getItem("watchlist_user") === null) {
             if (data.length == 0) {
                 // nao ta na lista
             } else {
+                temAvaliacao = true;
                 // ta na lista
                 let array = data[0]
                 // console.log(array);
@@ -82,3 +88,54 @@ if (localStorage.getItem("watchlist_user") === null) {
     })
 }
 
+function getJsonReq() {
+
+    let sit = ["watching", "plan-to-watch", "complete", "droped"];
+
+    
+    const fd = new FormData(idForm);
+    const bodyObj = {}
+    
+    
+    fd.forEach(function (value, key) {
+        bodyObj[key] = value;
+    })
+    
+    for (let i = 0; i < sit.length; i++) {
+        if (i == idTitleSituation.value) {
+            bodyObj.situation = sit[i];
+            // console.log(i)
+        }
+    }
+
+    bodyObj.iduser = iduser
+    bodyObj.idmedia = idmedia
+    // const body = JSON.stringify(bodyObj);
+    // console.log(body)
+    return bodyObj;
+}
+
+// adicionando à lista
+function atualize() {
+    const b = getJsonReq();
+    console.log(b);
+    // console.log(json);
+    // console.log(temAvaliacao)
+    if(!temAvaliacao) {
+        fetch(`/media/addAvaliacao?score=${b.score}&situation=${b.situation}&eps_assistidos=${b.eps_assistidos}&iduser=${b.iduser}&idmedia=${b.idmedia}`, {
+            method: "GET",
+        }).then(function (response) {
+            response.json().then(function (data) {
+                console.log(data);
+            })
+        })
+    } else {
+        fetch(`/media/updateAvaliacao?score=${b.score}&situation=${b.situation}&eps_assistidos=${b.eps_assistidos}&iduser=${b.iduser}&idmedia=${b.idmedia}`, {
+            method: "GET",
+        }).then(function (response) {
+            response.json().then(function (data) {
+                console.log(data);
+            })
+        })
+    }
+}
