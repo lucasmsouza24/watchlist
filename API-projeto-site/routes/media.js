@@ -153,4 +153,16 @@ router.get("/updateAvaliacao", (req, res, next) => {
     })
 })
 
+router.get("/getAverageScore", (req, res, next) => {
+    let idmedia = req.query.idmedia;
+
+    let sql = `SELECT avg(score) as 'avgscore' from tb_avaliacao where fk_media = ${idmedia};`;
+
+    sequelize.query(sql, {
+        type: sequelize.QueryTypes.SELECT
+    }).then(result => {
+        res.json(result[0])
+    })
+})
+
 module.exports = router;

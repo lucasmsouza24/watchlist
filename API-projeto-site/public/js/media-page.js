@@ -42,6 +42,19 @@ fetch(`/media/single?idmedia=${idmedia}`, {
     console.log("error: ", error.message);
 });
 
+// preenchendo a pontuação média
+fetch(`/media/getAverageScore?idmedia=${idmedia}`, {
+    method: "GET"
+}).then(response => {
+    response.json().then(data => {
+        if (data.avgscore == null) {
+            idScoreValue.innerHTML = "Sem Nota"
+        } else {
+            idScoreValue.innerHTML = Number(data.avgscore).toFixed(1)
+        }
+    })
+})
+
 // verificando se o usuário está logado
 if (localStorage.getItem("watchlist_user") === null) {
     // deslogado
@@ -138,4 +151,6 @@ function atualize() {
             })
         })
     }
+
+    window.location.reload();
 }
