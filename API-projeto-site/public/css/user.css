@@ -77,7 +77,8 @@
     width: 22%;
     height: 290px;
     /* border: 1px rgb(138, 90, 0) solid; */
-    background-color: rgba(40, 40, 40, 0.486);
+    /* background-color: rgb(30, 30, 80); */
+    background-color: var(--wl-dark-blue);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

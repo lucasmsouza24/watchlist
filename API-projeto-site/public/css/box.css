@@ -3,7 +3,7 @@
     padding: 20px;
     margin: 20px;
     border-radius: 5px;
-    background-color: rgb(30, 30, 30);
+    background-color: var(--wl-dark-blue);
 }
 .box-container:hover {
     box-shadow: var(--wl-blue) 0px 0px 5px;
@@ -14,6 +14,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    /* opacity: 0.3; */
 }
 
 .lg {
@@ -40,7 +41,9 @@
     width: 17%;
     height: 290px;
     /* border: 1px rgb(138, 90, 0) solid; */
-    background-color: rgb(40, 40, 40);
+    /* background-color: rgb(29, 29, 48); */
+    background-image: linear-gradient( black, #121536);
+    /* border: 2px rgb(31, 31, 85) solid; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
