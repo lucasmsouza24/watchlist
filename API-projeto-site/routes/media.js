@@ -153,6 +153,7 @@ router.get("/updateAvaliacao", (req, res, next) => {
     })
 })
 
+// retorna média da pontuação de uma obra
 router.get("/getAverageScore", (req, res, next) => {
     let idmedia = req.query.idmedia;
 
@@ -165,6 +166,7 @@ router.get("/getAverageScore", (req, res, next) => {
     })
 })
 
+// adiciona comentário em uma obra
 router.post("/addComment", (req, res, next) => {
     let b = req.body;
 
@@ -180,6 +182,7 @@ router.post("/addComment", (req, res, next) => {
     res.redirect(`/title.html?idmedia=${b.idmedia}`)
 })
 
+// retorna comentarios de uma obra
 router.get("/getComments", (req, res, next) => {
     let idmedia = req.query.idmedia;
 
@@ -191,4 +194,19 @@ router.get("/getComments", (req, res, next) => {
         res.json(result);
     })
 })
+
+// retorna avaliacoes de um usuário
+router.get("/getMylist", (req, res, next) => {
+    // res.json(req.query)
+    let iduser = req.query.iduser;
+
+    let sql = `SELECT pk_media, title, type, situation, banner_url FROM tb_avaliacao INNER JOIN tb_media ON tb_avaliacao.fk_media = tb_media.pk_media WHERE fk_user = ${iduser}`;
+
+    sequelize.query(sql, {
+        type: sequelize.QueryTypes.SELECT
+    }).then(result => {
+        res.json(result)
+    })
+})
+
 module.exports = router;

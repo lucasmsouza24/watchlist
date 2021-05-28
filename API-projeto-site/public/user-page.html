@@ -21,9 +21,9 @@
 
     <div class="container-sm center geral-box-user">
         <div class="user-box">
-            <div class="username">@Username</div>
+            <div class="username">@<span id="idUsername">Username</span></div>
             <div>Email: <span id="idEmail">email@email.com</span></div>
-            <div>Obras adicionadas: <span id="idQtdObras">10</span></div>
+            <div>Obras na lista: <span id="idQtdObras">10</span></div>
 
             <!--  -->
             <button onclick="redirectAddObra()" class="btn btn-add-obra">Adicionar obra ao catálogo</button>
@@ -42,40 +42,32 @@
             <div class="status-box">
                 <h2 class="status-box-title">Assistindo</h2>
 
-                <div class="status-box-content">
-
-                    <div class="card" onclick="redirectTitle(2)">
-                        <img class="card-post" src="../upload/example-poster.jpg">
-                        <div class="card-title">Fumetsu no Anata E</div>
-                    </div>
-
-                    <div class="card" onclick="redirectTitle(2)">
-                        <img class="card-post" src="../upload/example-poster.jpg">
-                        <div class="card-title">Fumetsu no Anata E</div>
-                    </div>
-
-                    <div class="card" onclick="redirectTitle(2)">
-                        <img class="card-post" src="../upload/example-poster.jpg">
-                        <div class="card-title">Fumetsu no Anata E</div>
-                    </div>
-
-                    
+                <div class="status-box-content" id="idBoxWatching">
+                    <div class="noitens" id="idnoitensWatching">Você não tem itens nessa lista</div>
                 </div>
             </div>
 
             <div class="status-box">
-                <h2 class="status-box-title">Assistindo</h2>
+                <h2 class="status-box-title">Planejo Assistir</h2>
 
-                <div class="status-box-content">
-                    <div class="card" onclick="redirectTitle(2)">
-                        <img class="card-post" src="../upload/example-poster.jpg">
-                        <div class="card-title">Fumetsu no Anata E</div>
-                    </div>
+                <div class="status-box-content" id="idBoxPlanToWatch">
+                    <div class="noitens" id="idnoitensPlanToWatch">Você não tem itens nessa lista</div>
+                </div>
+            </div>
 
-                    <div class="card" onclick="redirectTitle(2)">
-                        <img class="card-post" src="../upload/example-poster.jpg">
-                        <div class="card-title">Fumetsu no Anata E</div>
-                    </div>
+            <div class="status-box">
+                <h2 class="status-box-title">Já Assisti</h2>
+
+                <div class="status-box-content" id="idBoxComplete">
+                    <div class="noitens" id="idnoitensComplete">Você não tem itens nessa lista</div>
+                </div>
+            </div>
+
+            <div class="status-box">
+                <h2 class="status-box-title">Não Assisto Mais</h2>
+
+                <div class="status-box-content" id="idBoxDroped">
+                    <div class="noitens" id="idnoitensDroped">Você não tem itens nessa lista</div>
                 </div>
             </div>
         </div>
@@ -86,49 +78,5 @@
 </body>
 </html>
 <script src="./js/build-menu.js"></script>
-<script>
 
-    function redirectTitle(id) {
-        window.location.href = `http://localhost:3000/title.html?idmedia=${id}`
-    }
-
-    function redirectAddObra() {
-        window.location.href = `http://localhost:3000/add-obra.html`;
-    }
-
-    // const Chart = require('Chart.js')
-
-    function getout() {
-        localStorage.clear();
-        window.location.href = "index.html";
-    }
-    
-    const data = {
-        labels: [
-            'Filmes',
-            'Séries',
-            'Anime'
-        ],
-        datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100],
-            backgroundColor: [
-            '#46276e',
-            '#272e6e',
-            '#6e2727'
-            ],
-            hoverOffset: 4
-        }]
-    };
-    
-    const config = {
-        type: 'doughnut',
-        data: data,
-    };
-
-    
-
-    let ctx = document.querySelector("#idCanva");
-    let myChart = new Chart(ctx, config);
-
-</script>
+<script src="./js/user-page.js"></script>

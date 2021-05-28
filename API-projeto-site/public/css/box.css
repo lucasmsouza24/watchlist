@@ -58,7 +58,7 @@
     box-shadow: var(--wl-blue) 0px 0px 5px;
 }
 .card-post {
-    width: 160px;
+    max-width: 160px;
     height: 220px;
     background-color: black;
     align-self: center;
