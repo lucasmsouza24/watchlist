@@ -33,3 +33,26 @@ body {
 .mgtop {
     margin-top: 20px;
 }
+
+.warn {
+    padding: 20px;
+    /* border: 1px red solid; */
+    border-radius: 7px;
+    background-color: #282c52;
+    box-shadow: 0px 0px 5px 5px var(--wl-dark-blue);
+    font-size: 18px;
+    display: none;
+}
+
+.warn-red {
+    background-color: rgb(253, 89, 89);
+}
+
+.warn-green {
+    background-color: rgb(103, 218, 74);
+}
+
+.linkToLogin {
+    /* text-decoration: none; */
+    color: white;
+}

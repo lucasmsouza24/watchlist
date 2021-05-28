@@ -28,8 +28,11 @@
             <input id="idPwd" placeholder="Senha" class="login-box-input" type="password" minlength="6" required> 
 
             <input type="button" onclick="cadastrar()" class="login-box-button" value="Cadastrar"></input> 
-
         </form>
+
+        <div class="warn warn-green" id="idWarnBox">
+            
+        </div>
     </div>
     <!-- end input box -->
 
@@ -46,12 +49,9 @@
         fetch(`/users/cadastrar?email=${email}&nick=${nick}&pwd=${pwd}`, {
             method: "GET",
         }).then(resposta => {
-            
-            if(resposta.ok) {
-                console.log("ok");
-            } else {
-                console.log("erro de cadastro");
-            }
+            // console.log("ok");
+            idWarnBox.innerHTML = 'Usuário cadastrado!<a href="./login.html" class="linkToLogin">Entrar</a>'
+            idWarnBox.setAttribute("style", "display: block;");
         });
     }   
 

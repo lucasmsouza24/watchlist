@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
-var users = require('../models').users;
+// var users = require('../models').users;
 var env = process.env.NODE_ENV || 'development';
 
 // autenticar usuario
@@ -48,6 +48,7 @@ router.get('/cadastrar', function(req, res, next) {
 		type: sequelize.QueryTypes.SELECT
 	})
 	.then(resultado => {
+		resultado.ok = true
 		res.json(resultado);
 		res.status(200)
 		
