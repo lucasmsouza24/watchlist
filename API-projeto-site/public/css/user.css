@@ -118,7 +118,7 @@
 .btn {
     border-style: none;
     padding: 10px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background-color: rgb(30, 30, 30);
     color: white;
     font-size: 18px;

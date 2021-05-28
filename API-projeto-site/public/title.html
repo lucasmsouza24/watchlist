@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watchlist! - Obra</title>
     <link rel="shortcut icon" href="./img/logo-watchlist.png" />
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/main-menu.css">
     <link rel="stylesheet" href="./css/box.css">
     <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+    </style>
 </head>
 <body>
     
@@ -79,7 +82,7 @@
                     </select>
                 </div>
 
-                <input type="button" value="Atualizar" class="btn btn-green" id="IdBtnSubmit" onclick="atualize()">
+                <input type="button" value="Atualizar" class="btn btn-green mgtop" id="IdBtnSubmit" onclick="atualize()">
             </form>
         </div>
         <!-- end score box -->
@@ -94,7 +97,7 @@
         <form id="idFormSendComment" class="form-send-comment" action="/media/addComment" method="POST">
             <input type="hidden" id="inputUser" name="iduser" required>
             <input type="hidden" id="inputMedia" name="idmedia" required>
-            <input type="submit" value="Postar" class="btn btn-green" style="background-color: var(--wl-dark-blue);">
+            <input type="submit" value="Postar" class="btn btn-green bg-dblue mgtop">
         </form>
     </div>
 

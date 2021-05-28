@@ -223,4 +223,18 @@ router.get("/category", (req, res, next) => {
     })
 })
 
+// retorna pesquisa de medias
+router.get("/mediaSearch", (req, res, next) => {
+    let querySearch = req.query.search;
+    let search = querySearch.replace("%20", " ");
+
+    let sql = `SELECT * FROM tb_media WHERE title LIKE '%${search}%'`;
+
+    sequelize.query(sql, {
+        type: sequelize.QueryTypes.SELECT
+    }).then(response => {
+        res.json(response)
+    })
+})
+
 module.exports = router;
