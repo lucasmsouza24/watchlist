@@ -209,4 +209,18 @@ router.get("/getMylist", (req, res, next) => {
     })
 })
 
+// retorna todas as obras de alguma categoria
+router.get("/category", (req, res, next) => {
+    // res.json(req.query)
+    let type = req.query.type;
+
+    let sql = `SELECT * FROM tb_media WHERE type = '${type}' ORDER BY pk_media DESC`
+
+    sequelize.query(sql, {
+        type: sequelize.QueryTypes.SELECT
+    }).then(response => {
+        res.json(response);
+    })
+})
+
 module.exports = router;

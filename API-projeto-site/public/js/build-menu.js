@@ -6,9 +6,9 @@ if (localStorage.getItem("watchlist_user") !== null) {
     idMenuBox.innerHTML = `
     <ul class="main-menu-ul">
         <li class="main-menu-item"><a href="index.html"><img src="./img/logotipo-watchlist.png" alt="watchlist logo"></a></li>
-        <li class="main-menu-item main-menu-item-click"><a href="#">Filmes</a></li>
-        <li class="main-menu-item main-menu-item-click"><a href="#">Séries</a></li>
-        <li class="main-menu-item main-menu-item-click"><a href="#">Animes</a></li>
+        <li class="main-menu-item main-menu-item-click"><a href="category.html?type=movie">Filmes</a></li>
+        <li class="main-menu-item main-menu-item-click"><a href="category.html?type=tvserie">Séries</a></li>
+        <li class="main-menu-item main-menu-item-click"><a href="category.html?type=anime">Animes</a></li>
         <li class="main-menu-item main-menu-item-click margin-left"><a href="#">Sobre</a></li>
         <li class="main-menu-item main-menu-item-click main-menu-item-entre"><a href="./user-page.html">@${user.nick}</a></li>
     </ul>
