@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-CREATE DATABASE bd_watchlist;
+CREATE DATABASE db_watchlist;
 USE db_watchlist;
 --
 -- Table structure for table `comments`
