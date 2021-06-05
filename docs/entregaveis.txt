@@ -1,0 +1,31 @@
+TI 
+    Gestão de projetos ágeis            (x)
+    Requisitos                          (x)
+    Backlog                             (x)
+    Sprints                             ()
+    HLD                                 ()
+    LLD                                 ()
+
+BD 
+    Modelo Lógico                       (x)
+    Normalização                        (x)
+    Relacionamentos                     (x)
+    1-N                                 (x)
+    N-N                                 (x)
+    Comandos SQL                        (x)
+
+Algoritmos:
+    Variáveis                           (x)
+    Funções                             (x)
+    Operações Matemáticas               (x)
+    Condicionais                        (x)
+    Repetições                          (x)
+    Vetores                             (x)
+
+Arq Comp 
+    Métricas aplicadas aos dados        (x)
+
+PI 
+    Contexto                            ()
+    Inovações                           ()
+    Uso do GIT                          (x)

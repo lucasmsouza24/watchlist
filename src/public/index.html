@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/main-menu.css">
     <link rel="stylesheet" href="./css/box.css">
     <script src="./js/components.js"></script>
+    <src src="./js/functions.js"></src>
 </head>
 <body>
     
@@ -19,14 +20,29 @@
     </header>
     <!-- end menu -->
 
+    <div class="container center" id="tutoBox">
+        
+    </div>
+
+    <!-- render movies/series -->
     <div class="container center" id="display_container">
 
     </div>
+
+    <!-- footer -->
+    <footer>
+        <div>
+            Desenvolvido por Lucas Mesquita de Souza
+        </div>
+
+        <a href="https://github.com/lucasmsouza24">
+            <img src="./img/footer-github-icon.png" alt="GitHub" target="_blank">
+        </a>
+    </footer>
 </body>
 </html>
 <script src="./js/build-menu.js"></script>
 <script src="./js/build-index-content.js"></script>
-<script src="./js/functions.js"></script>
 <script>
     let params = new URLSearchParams(document.location.search.substring(1))
     let status = params.get("status");
@@ -35,7 +51,7 @@
         if (status == "aviso") {
             alert("Obra adicionada! verifique o catálogo")
         }
-    }, 300)
+    }, 300);
     
 </script>
 

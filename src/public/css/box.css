@@ -38,7 +38,7 @@
 
 /* card */
 .card {
-    width: 17%;
+    width: 220px;
     height: 290px;
     /* border: 1px rgb(138, 90, 0) solid; */
     /* background-color: rgb(29, 29, 48); */
@@ -149,7 +149,7 @@
 .media-box {
     width: 60%;
     height: 450px;
-    background-color: rgb(30, 30, 30);
+    background-color: #0c0f29;
     margin: 30px auto;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px var(--wl-dark-blue);
@@ -240,7 +240,7 @@
     margin-right: auto;
     text-align: center;
     color: white;
-    background-color: rgb(40, 40, 40);
+    background-color: #10153b;
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -253,7 +253,7 @@
     height: 25px;
     margin-left: 10px;
     margin-right: 10px;
-    background-color: rgb(30, 30, 30);
+    background-color: #0c0f29;
     border-bottom: 2px solid var(--wl-blue);
     border-radius: 5px;
     border-style: none;
@@ -303,7 +303,7 @@
     border-style: none;
     padding: 10px;
     /* margin-top: 20px; */
-    background-color: rgb(30, 30, 30);
+    background-color: #0c0f29;
     color: white;
     font-size: 18px;
     border: 2px white solid;

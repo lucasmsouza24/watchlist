@@ -1,6 +1,3 @@
-const authEmail = "admin@admin.com";
-const authPwd = "admin123";
-
 function authLogin(inputEmail, inputPwd) {
 
     if (authEmail == inputEmail && authPwd == inputPwd) {

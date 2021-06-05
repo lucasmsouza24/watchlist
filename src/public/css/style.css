@@ -1,0 +1,137 @@
+:root {
+    --wl-blue: #5271ff;
+    --wl-dark-blue: #161a42;
+    --wl-orange: #ff914d;
+    --wl-green: rgb(131, 235, 136);
+    --wl-dark-green: rgb(89, 163, 93);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(black, var(--wl-dark-blue));
+}
+
+.container {
+    width: 90%;
+    /* border: 2px solid red; */
+}
+
+.container-sm {
+    width: 85%;
+    border: 2px solid rgba(255, 255, 255, 0.288);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mgtop {
+    margin-top: 20px;
+}
+
+.warn {
+    padding: 20px;
+    /* border: 1px red solid; */
+    border-radius: 7px;
+    background-color: #282c52;
+    box-shadow: 0px 0px 5px 5px var(--wl-dark-blue);
+    font-size: 18px;
+    display: none;
+}
+
+.warn-red {
+    background-color: rgb(253, 89, 89);
+}
+
+.warn-green {
+    background-color: rgb(103, 218, 74);
+}
+
+.linkToLogin {
+    /* text-decoration: none; */
+    color: white;
+}
+
+/* tuto */
+.card-tuto {
+    background-color: #134363;
+    /* background: linear-gradient(black, #164231); */
+
+    /* dimensions */
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid red; */
+}
+
+.card-tuto p {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-tuto img {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px red solid; */
+    text-align: center;
+}
+
+.card-tuto:hover {
+    opacity: 0.8;
+    box-shadow: 0px 0px 10px 10px var(--wl-blue);
+}
+
+footer {
+    width: 100%;
+    height: 150px;
+
+    background-color: #134363;
+
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    /* padding: 30px; */
+    font-size: 20px;
+    /* font-weight: bold; */
+    /* color: white; */
+
+    bottom: 0;
+    position: initial;
+    margin-top: 30px;
+}
+
+footer img {
+    width: 50px;
+    margin-left: 20px;
+}
+
+.no-acc {
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.no-acc a {
+    color: #5271ff;
+    font-style: none;
+}
