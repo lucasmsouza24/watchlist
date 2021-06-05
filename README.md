@@ -2,6 +2,8 @@
 
 O Watchlist é uma forma de organizar tudo o que você assiste.
 
+![npm](https://img.shields.io/npm/v/npm) ![node-current](https://img.shields.io/node/v/3)
+
 ## Instalação
 
 1. Abra o terminal e clone o repositório:
