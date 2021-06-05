@@ -16,7 +16,7 @@ git clone https://github.com/lucasmsouza24/watchlist.git
 ```shell
 npm install
 ```
-3. Navegue até a pasta db (na raiz do repositório) e execute o MySQL:  
+3. Navegue até a raiz do repositório e execute o MySQL:  
 Obs: "root" pode ser alterado para qualquer usuário que tenha permissão de criar tabelas.
 
 ```shell
@@ -26,12 +26,12 @@ mysql -u root -p
 4. Crie o banco de dados:
 
 ```shell
-source build-db.sql
+source ./db/build-db.sql
 ```
 
 5. Crie o usuário da aplicação:
 ```shell
-source create-user.sql
+source ./db/create-user.sql
 ```
 
 ## Uso
