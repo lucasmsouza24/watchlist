@@ -1,7 +1,7 @@
 let params = new URLSearchParams(document.location.search.substring(1));
 let urlSearch = params.get("search");
 // urlSearch = urlSearch.replace(" ", "+")
-console.log(urlSearch)
+// console.log(urlSearch)
 
 // console.log(params)
 let searchComplete = urlSearch.replace("+", " ")

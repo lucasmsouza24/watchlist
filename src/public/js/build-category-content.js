@@ -1,7 +1,7 @@
 let params = new URLSearchParams(document.location.search.substring(1));
 let type = params.get("type");
 
-console.log(type);
+// console.log(type);
 let label = "";
 
 if(type == "anime") {

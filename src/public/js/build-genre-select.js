@@ -6,7 +6,7 @@ fetch("/leituras/genres", {
         // console.log(data);
 
         for (let i = 0; i <= data.length - 1; i++) {
-            console.log(data[i]);
+            // console.log(data[i]);
 
             idGenre.innerHTML += `<option value="${data[i].pk_genre}">${data[i].name}</option>`
         }

@@ -39,7 +39,7 @@ fetch(`/media/single?idmedia=${idmedia}`, {
     }
 })
 .catch(function (error) {
-    console.log("error: ", error.message);
+    // console.log("error: ", error.message);
 });
 
 // preenchendo a pontuação média
@@ -135,7 +135,7 @@ function getJsonReq() {
 // adicionando à lista
 function atualize() {
     const b = getJsonReq();
-    console.log(b);
+    // console.log(b);
     // console.log(json);
     // console.log(temAvaliacao)
     if(!temAvaliacao) {
@@ -143,7 +143,7 @@ function atualize() {
             method: "GET",
         }).then(function (response) {
             response.json().then(function (data) {
-                console.log(data);
+                // console.log(data);
             })
         })
     } else {
@@ -151,7 +151,7 @@ function atualize() {
             method: "GET",
         }).then(function (response) {
             response.json().then(function (data) {
-                console.log(data);
+                // console.log(data);
             })
         })
     }
