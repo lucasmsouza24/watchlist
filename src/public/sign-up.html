@@ -55,15 +55,21 @@
                 // console.log("ok");
                 idWarnBox.innerHTML = 'Usuário cadastrado!<a href="./login.html" class="linkToLogin">Entrar</a>'
                 idWarnBox.setAttribute("style", "display: block;");
+                idWarnBox.setAttribute("class", "warn warn-green");
             });
             // console.log("valido")
         } else {
-            alert(msgInvalid);
+            idWarnBox.innerHTML = msgInvalid;
+            idWarnBox.setAttribute("style", "display: block;");
+            idWarnBox.setAttribute("class", "warn warn-red");
         }
     }   
 
     function isValid(email, pwd, nick) {
-        if (email == "") {
+        if (nick == "" || nick.length < 3) {
+            msgInvalid = "O nick deve ter pelo menos 3 caracteres"
+            return false
+        } else if (email == "") {
             msgInvalid = "Emails vazios não são válidos";
             return false;
         } else if (email.indexOf('@') == -1) {
@@ -76,10 +82,7 @@
             msgInvalid = "Senhas vazias são não aceitas"
             return false
         } else if (pwd.length < 5) {
-            msgInvalid = "A senha digitada é muito curta"
-            return false
-        } else if (nick == "" || nick.length < 3) {
-            msgInvalid = "O Nick digitado é muito curto"
+            msgInvalid = "A senha deve ter pelo menos 5 dígitos"
             return false
         } else {
             return true

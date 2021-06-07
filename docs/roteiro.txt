@@ -1,0 +1,75 @@
+=======================================
+	ROTEIRO - PROJETO INDIVIDUAL
+			WATCHLIST
+=======================================
+
+1. Tema
+	1.1 - Interesse
+
+		[APRESENTAÇÃO PESSOAL]
+
+		Meu tema escolhido é "FILMES E SÉRIES".
+
+		Eu sou da época da TvGlobinho. Então, quando criança, meu ritual diário era acordar cedo pra assistir os desenhos antes de ir pra escola.
+
+		Eu fui crescendo e os gostos foram mudando. Mas nunca deixei de gostar de assistir.
+
+	1.2 - Valores
+
+		Empatia
+			O que eu mais gosto em filmes é me colocar no lugar dos personagens, por isso essa atividade trabalha muito a minha empatia
+
+		Organização e Planejamento
+			O projeto em si tem muito a ver com organização, como veremos no próximo slide
+
+
+2. Contextualização
+	2.1 - Problema
+
+		Dúvida
+		Como todos sabem, existem incontáveis filmes e séries. Uma consequência disso é que as pessoas ficam em dúvida do que assistir e perdem um bom tempo tempo escolhendo o que assistir.
+
+		Organização
+		Além disso, algumas pessoas ficam muito tempo sem assistir determinada série, e quando volta a assistir, mal sabe em qual episódio parou.
+
+	2.2 - Solução
+		2.2.1 - HLD
+
+			Minha solução proposta é um site que promete solucionar os problemas citados.
+
+			Como todo site, tudo que o usuário precisa é de um dispositivo que suporte qualquer navegador moderno e uma conexão estável à internet.
+
+			O Watchlist disponibiliza um catálogo escalável de filmes/séries.
+			Qualquer usuário poderá adicionar itens ao catálogo.
+
+			Organização - O cada item do catálogo pode ser adicionado à lista do usuário. Onde ficarão guardadas informações como: quantidade de episódios que o usuário assistiu, qual o status da obra e sua avaliação
+
+			Dúvida - Todos os usuários podem avaliar e fazer comentários sobre qualquer obra. E se basear nos comentários/avaliações de outros usuários para decidir o que vai assistir
+
+		2.2.2 - LLD
+
+			A partir de qualquer computador que suporte navegadores modernos e uma conexão estável à internet, o usuário terá acesso ao site que estará hospedado no Microsoft Azure. Onde roda um servidor NodeJS realizando conexão com um banco de dados MySQL.
+
+4. Site
+	4.1 - Demonstração
+	4.2 - Código
+
+5. Banco
+	5.1 - Modelagem Lógica
+	5.2 - db scripts
+
+6. Gestão do Projeto
+	6.1 - Documento do Projeto
+	6.1 - Trello
+
+7. Git
+	7.1 - Commits
+	7.2 - Instalação
+
+8. Finalização
+	8.1 - Superação / Dificuldade
+		A parte mais difícil foi conciliar as aulas, período de prova, projeto em grupo e individual. Exigiu um enorme planejamento e muita vontade de continuar trabalhando
+
+	8.2 - Agradecimentos
+		- Grupo de PI
+		- Família
