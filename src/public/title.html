@@ -36,6 +36,11 @@
             <p id="titleTextSynopsis">
 
             </p>
+
+            <div class="warn warn-red" id="idWarnBox">
+                Para adicionar uma obra, você precisa estar logado!
+                <a href="./login.html">Logar</a>
+            </div>
         </div>
 
         <!-- score box -->
@@ -68,7 +73,7 @@
                 <div class="form-input-box">
                     Nota: 
                     <select name="score" id="idScore" required>
-                        <option disabled selected value>Escolha</option>
+                        <option selected value="null">Não sei</option>
                         <option value="10">Obra de Arte (10)</option>
                         <option value="9">Ótimo (9)</option>
                         <option value="8">Muito Bom (8)</option>
@@ -83,6 +88,7 @@
                 </div>
 
                 <input type="button" value="Atualizar" class="btn btn-green mgtop" id="IdBtnSubmit" onclick="atualize()">
+
             </form>
         </div>
         <!-- end score box -->

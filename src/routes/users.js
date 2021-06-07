@@ -10,6 +10,8 @@ router.get('/autenticar', function(req, res, next) {
 	// armazenando valores dos inputs
 	let email = req.query.email;
 	let pwd = req.query.pwd;
+	console.log("=========================================")
+	console.log("query: ", req.query);
 
 	if (env == 'dev') {
 		// abaixo, escreva o select de dados para o Workbench
@@ -24,7 +26,9 @@ router.get('/autenticar', function(req, res, next) {
 	})
 	.then(resultado => {
 		// console.log("Tamanho da string: ", resultado.length);
+		console.log(resultado);
 		res.json(resultado);
+		console.log("=========================================")
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);

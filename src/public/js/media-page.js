@@ -135,28 +135,36 @@ function getJsonReq() {
 // adicionando à lista
 function atualize() {
     const b = getJsonReq();
-    // console.log(b);
-    // console.log(json);
-    // console.log(temAvaliacao)
-    if(!temAvaliacao) {
-        fetch(`/media/addAvaliacao?score=${b.score}&situation=${b.situation}&eps_assistidos=${b.eps_assistidos}&iduser=${b.iduser}&idmedia=${b.idmedia}`, {
-            method: "GET",
-        }).then(function (response) {
-            response.json().then(function (data) {
-                // console.log(data);
-            })
-        })
-    } else {
-        fetch(`/media/updateAvaliacao?score=${b.score}&situation=${b.situation}&eps_assistidos=${b.eps_assistidos}&iduser=${b.iduser}&idmedia=${b.idmedia}`, {
-            method: "GET",
-        }).then(function (response) {
-            response.json().then(function (data) {
-                // console.log(data);
-            })
-        })
-    }
 
-    window.location.reload();
+    console.log(b);
+
+    if(b.iduser == null) {
+        idWarnBox.setAttribute("style", "display: block;");
+        console.log("não ta logado")
+    } else {    
+        // console.log(b);
+        // console.log(json);
+        // console.log(temAvaliacao)
+        if(!temAvaliacao) {
+            fetch(`/media/addAvaliacao?score=${b.score}&situation=${b.situation}&eps_assistidos=${b.eps_assistidos}&iduser=${b.iduser}&idmedia=${b.idmedia}`, {
+                method: "GET",
+            }).then(function (response) {
+                response.json().then(function (data) {
+                    // console.log(data);
+                })
+            })
+        } else {
+            fetch(`/media/updateAvaliacao?score=${b.score}&situation=${b.situation}&eps_assistidos=${b.eps_assistidos}&iduser=${b.iduser}&idmedia=${b.idmedia}`, {
+                method: "GET",
+            }).then(function (response) {
+                response.json().then(function (data) {
+                    // console.log(data);
+                })
+            })
+        }
+        
+        window.location.reload();
+    }
 }
 
 // comentarios

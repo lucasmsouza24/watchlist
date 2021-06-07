@@ -21,13 +21,13 @@
 
     <!-- input box -->
     <div class="login-box center" id="idLoginBox" action="POST" >
-        <form class="box-container st center-column-child" id="form_login" onsubmit="login()">
+        <form class="box-container st center-column-child" id="form_login">
             <input id="idEmail" placeholder="E-mail" class="login-box-input" type="email" name="email" required> 
             <input id="idPwd" placeholder="Senha" class="login-box-input" type="password" name="pwd" required>
 
             <div class="no-acc">Ainda não tem uma conta? <a href="http://localhost:3000/sign-up.html">Cadastre-se</a></div>
 
-            <button type="submit" class="login-box-button" value="Entrar">Entrar</button> 
+            <input type="button" class="login-box-button" value="Entrar" onclick="login()"></input> 
         </form>
 
         <div class="warn warn-red" id="idWarnBox">
@@ -63,7 +63,7 @@
 
                 resposta.json().then(json => {
 
-                    // console.log(json);
+                    console.log(json);
                     // console.log(json[0]);
                     
                     if (json.length == 0) {
