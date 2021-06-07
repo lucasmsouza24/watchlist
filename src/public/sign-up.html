@@ -65,7 +65,10 @@
         }
     }   
 
-    function isValid(email, pwd, nick) {
+    function isValid(emailParam, pwd, nickParam) {
+        let email = emailParam.toLowerCase();
+        let nick = nickParam.toLowerCase();
+        
         if (nick == "" || nick.length < 3) {
             msgInvalid = "O nick deve ter pelo menos 3 caracteres"
             return false
